@@ -20,20 +20,20 @@
 <header x-data="{ isWideScreen: window.innerWidth >= 768 }" x-init="window.addEventListener('resize', () => isWideScreen = window.innerWidth >= 768)">
     <!-- mobile -->
     <div class="h-[82px] w-[100%] fixed top-0 left-0 backdrop-blur-md grid justify-items-center items-center z-10" x-show="!isWideScreen">
-        <img src="/icons/logo.png" alt="Logo désinfox" class="h-[40px] w-[40px]"
+        <img src="../icons/logo.png" alt="Logo désinfox" class="h-[40px] w-[40px]"
             x-data @click="window.scrollTo({top: 0, behavior: 'smooth'})">
     </div>
     <!-- desktop -->
      <div class="h-[82px] w-[100%] fixed top-0 left-0 backdrop-blur-md grid justify-items-center items-center z-10" x-show="isWideScreen">
-        <img src="/icons/logo-full.png" alt="Logo désinfox" class="h-[40px] cursor-pointer" x-data @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <img src="../icons/logo-full.png" alt="Logo désinfox" class="h-[40px] cursor-pointer" x-data @click="window.scrollTo({top: 0, behavior: 'smooth'})">
      </div>
 </header>
 <!-- Hero -->
 <section x-data="{ isWideScreen: window.innerWidth >= 768 }" x-init="window.addEventListener('resize', () => isWideScreen = window.innerWidth >= 768)">
-    <div class="h-[270px] w-[100%] bg-[url('/icons/violet.svg')] text-center leading-tight relative grid justify-items-center" x-show="!isWideScreen">
+    <div class="h-[270px] w-[100%] bg-[url('../icons/violet.svg')] text-center leading-tight relative grid justify-items-center" x-show="!isWideScreen">
         <h1 class="text-[36px] text-white absolute bottom-[46px] font-bold">Vous avez vu, <br>vous n'avez<br> pas regardé.</h1>
     </div>
-    <div class="h-[922px] w-[100%] bg-no-repeat bg-[url('/icons/violet.svg')] text-center leading-tight grid justify-items-center items-center" x-show="isWideScreen">
+    <div class="h-[922px] w-[100%] bg-no-repeat bg-[url('../icons/violet.svg')] text-center leading-tight grid justify-items-center items-center" x-show="isWideScreen">
         <h1 class="text-[80px] text-white font-bold">Vous avez vu, <br>vous n'avez<br> pas regardé.</h1>
     </div>
 </section>
@@ -42,19 +42,19 @@
 <section x-data="{ isWideScreen: window.innerWidth >= 768 }" x-init="window.addEventListener('resize', () => isWideScreen = window.innerWidth >= 768)">
     <div class="bg-[#000000] w-[100%]" x-show="!isWideScreen">
         <video class="w-[100%]" @click="" controls>
-            <source src="/icons/video.mp4" type="video/mp4">
+            <source src="../icons/video.mp4" type="video/mp4">
             Votre navigateur ne supporte pas ce type de vidéo
         </video>
     </div>
     <div class="w-[100%] h-[602.93px] grid justify-items-center bg-black overflow-hidden" x-show="isWideScreen">
         <video class="w-[100%] h-[602.93px]" @click="" controls>
-            <source src="/icons/video.mp4" type="video/mp4">
+            <source src="../icons/video.mp4" type="video/mp4">
             Votre navigateur ne supporte pas ce type de vidéo
         </video>
     </div>
 </section>
 
-<section class="grid grid-rows-4 gap-1 place-items-center bg-[url('/icons/vert.svg')] text-white">
+<section class="grid grid-rows-4 gap-1 place-items-center bg-[url('../icons/vert.svg')] text-white">
     <div class="p-7">
         <p>Voulez-vous comprendre les enjeux de la désinformation et apprendre à naviguer dans un flux constant d'informations ?</p>
     </div>
@@ -132,7 +132,7 @@
 
 <section x-data="{ isWideScreen: window.innerWidth >= 768 }" x-init="window.addEventListener('resize', () => isWideScreen = window.innerWidth >= 768)">
     <div
-        class="h-[509px] w-[100%] bg-[url('/icons/violet.svg')] text-center justify-items-center items-center grid grid-rows-[80px,287px,50px]" x-show="!isWideScreen">
+        class="h-[509px] w-[100%] bg-[url('../icons/violet.svg')] text-center justify-items-center items-center grid grid-rows-[80px,287px,50px]" x-show="!isWideScreen">
         <h2 class="text-[28px] text-white font-semibold">Se documenter</h2>
         <!-- Carousel -->
         <div class="w-[80%] h-[100%] overflow-x-scroll hide-scrollbar">
@@ -141,12 +141,12 @@
                     class="w-[273px] bg-white p-[12px] grid gap-1 grid-rows-[30px,30px,1fr] text-start px-[12px] rounded">
                     <h3 class="font-helvetica font-bold mt-2">Rapport de l'Arcom</h3>
                     <p class="text-[13px]">Découvrez des actualités au quotidien</p>
-                    <div class="bg-[url('/icons/carrousel1.svg')]"></div>
+                    <div class="bg-[url('../icons/carrousel1.svg')]"></div>
                 </div>
                 <div class="w-[273px] bg-white p-[12px] grid gap-1 grid-rows-[30px,60px,1fr] text-start px-[12px] rounded">
                     <h3 class="font-helvetica font-bold mt-2">Rapport de l'Arcom</h3>
                     <p class="text-[13px]">Retrouvez et consultez toutes les études, bilans, rapports et activités de l'Arcom, disponibles en téléchargement</p>
-                    <div class="bg-[url('/icons/carrousel2.svg')]"></div>
+                    <div class="bg-[url('../icons/carrousel2.svg')]"></div>
                     <!-- <img src="./img/fond-violet.svg" alt="" class=""> -->
                 </div>
             </div>
@@ -163,14 +163,14 @@
 
         <div class="bg-white grid grid-rows-3 gap-2 place-items-center w-[90vw] mx-auto mt-7 p-7">
             <div class="content1 grid grid-cols-[50px,1fr] items-center">
-                <img src="/icons/activity.svg" alt="">
+                <img src="../icons/activity.svg" alt="">
                 <div class="grid grid-rows-[50px,1fr] items-center text-left">
                     <h3 class="text-[16px] font-bold">Analyse par des professionnels</h3>
                     <p>Chaque pratique proposée est examinée par de véritables experts reconnus dans leur domaine .</p>
                 </div>
             </div>
             <div class="content1 grid grid-cols-[50px,1fr] items-center">
-                <img src="/icons/search.svg" alt="">
+                <img src="../icons/search.svg" alt="">
                 <div class="grid grid-rows-[50px,1fr] items-center text-left">
                     <h3 class="text-[16px] font-bold">Recherche intelligente</h3>
                     <p>Trouvez des influenceurs ou des pratiques actuelles , en un clin d'oeil et sans douter des infos.</p>
@@ -178,7 +178,7 @@
             </div>
 
             <div class="content1 grid grid-cols-[50px,1fr] items-center">
-                <img src="/icons/book-open.svg" alt="">
+                <img src="../icons/book-open.svg" alt="">
                 <div class="grid grid-rows-[50px,1fr] items-center text-left">
                     <h3 class="text-[16px] font-bold">Programme d'affiliation</h3>
                     <p>Grace au programme d'affiliation Desintox ,les influenceurs officiels seront reconnus et facilement identifés. </p>
@@ -232,10 +232,10 @@
         <div class="w-[555px] h-[287px] grid gap-4 grid-rows-1 grid-cols-2">
             <div class="w-[273px] bg-white p-4 grid gap-1 grid-rows-[30px,30px,1fr] text-start rounded-lg border border-black">
                 <h3 class="font-helvetica font-bold mt-2">Ce qu'ils disent</h3>
-                <img src="/icons/guillemet.svg" alt="" class="h-12 w-12 pt-2"> <!-- Taille agrandie ici -->
+                <img src="../icons/guillemet.svg" alt="" class="h-12 w-12 pt-2"> <!-- Taille agrandie ici -->
                 <p class="mt-4">C'est quand il y a des preuves comme des images, des vidéos. La meilleure façon de prouver un truc, c'est le visuel.</p>
                 <div class="flex items-center space-x-4">
-                    <img src="/icons/personna1.svg" alt="" class="h-12 w-12">
+                    <img src="../icons/personna1.svg" alt="" class="h-12 w-12">
                     <ul class="list-none">
                         <li>Ali</li>
                         <li>20 ans</li>
@@ -246,10 +246,10 @@
                                     
             <div class="w-[273px] bg-white p-4 grid gap-1 grid-rows-[30px,30px,1fr] text-start rounded-lg border border-black">
                 <h3 class="font-helvetica font-bold mt-2">Ce qu'ils disent</h3>
-                <img src="/icons/guillemet.svg" alt="" class="h-12 w-12 pt-2"> <!-- Taille agrandie ici -->
+                <img src="../icons/guillemet.svg" alt="" class="h-12 w-12 pt-2"> <!-- Taille agrandie ici -->
                 <p class="mt-4">C'est quand il y a des preuves comme des images, des vidéos. La meilleure façon de prouver un truc, c'est le visuel.</p>
                 <div class="flex items-center space-x-4">
-                    <img src="/icons/personna1.svg" alt="" class="h-12 w-12">
+                    <img src="../icons/personna1.svg" alt="" class="h-12 w-12">
                     <ul class="list-none">
                         <li>Ali</li>
                         <li>20 ans</li>
@@ -307,9 +307,9 @@
 <section class="bg-[#825EE8] w-[90vw] mx-auto grid grid-cols-[50%,1fr] items-center p-10 rounded-lg text-white mt-14">
     <h2 class="text-lg font-bold">Suivez-nous sur les réseaux</h2>
     <div class="flex gap-4">
-        <img src="/icons/instagram.svg" alt="" class="w-10 h-10">
-        <img src="/icons/tiktok.svg" alt="" class="w-10 h-10">
-        <img src="/icons/youtube.svg" alt="" class="w-10 h-10">
+        <img src="../icons/instagram.svg" alt="" class="w-10 h-10">
+        <img src="../icons/tiktok.svg" alt="" class="w-10 h-10">
+        <img src="../icons/youtube.svg" alt="" class="w-10 h-10">
     </div>
 </section>
 
