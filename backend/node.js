@@ -40,8 +40,7 @@ app.post("/newsletter", async (req, res) => {
             }
         ]
         });
-
-        console.log("Email sent: ", info.response); 
+        res.status(200).json({ message: "Inscription réussie et email envoyé." });
     } catch (error) {
         console.error("Error sending email: ", error);
         res.status(500).json({ message: "Erreur lors de l'inscription", error: error.message });
