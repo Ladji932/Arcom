@@ -64,12 +64,12 @@
     </section>
 
     <!-- infos flous -->
-    <section 
-        x-data="{ isWideScreen: window.innerWidth >= 768 }"
+    <section x-data="{ isWideScreen: window.innerWidth >= 768 }"
         x-init="window.addEventListener('resize', () => isWideScreen = window.innerWidth >= 768)">
 
         <!-- mobile -->
-        <div class="grid grid-rows-4 gap-1 place-items-center bg-[url('./icons/vert.svg')] text-white" x-show="!isWideScreen">
+        <div class="grid grid-rows-4 gap-1 place-items-center bg-[url('./icons/vert.svg')] text-white"
+            x-show="!isWideScreen">
 
             <div class="p-7">
                 <p>Voulez-vous comprendre les enjeux de la désinformation et apprendre à naviguer dans un flux constant
@@ -246,105 +246,215 @@
         </div>
     </section>
 
-    <section class="bg-black pb-7">
-        <h2 class="pt-12 text-4xl font-bold text-white text-center">Pourquoi s'inscrire ?</h2>
-
-        <div class="bg-white grid grid-rows-3 gap-2 place-items-center w-[90vw] mx-auto mt-7 p-7">
-            <div class="content1 grid grid-cols-[50px,1fr] items-center">
-                <img src="./icons/activity.svg" alt="">
-                <div class="grid grid-rows-[50px,1fr] items-center text-left">
-                    <h3 class="text-[16px] font-bold">Analyse par des professionnels</h3>
-                    <p>Chaque pratique proposée est examinée par de véritables experts reconnus dans leur domaine .</p>
+    
+    <section x-data="{ isWideScreen: window.innerWidth >= 768 }"
+        x-init="window.addEventListener('resize', () => isWideScreen = window.innerWidth >= 768)">
+        <!-- mobile -->
+        <div x-show="!isWideScreen">
+            <div class="bg-black pb-7">
+                <h2 class="pt-12 text-4xl font-bold text-white text-center">Pourquoi s'inscrire ?</h2>
+        
+                <div class="bg-white grid grid-rows-3 gap-2 place-items-center w-[90vw] mx-auto mt-7 p-7">
+                    <div class="content1 grid grid-cols-[50px,1fr] items-center">
+                        <img src="./icons/activity.svg" alt="">
+                        <div class="grid grid-rows-[50px,1fr] items-center text-left">
+                            <h3 class="text-[16px] font-bold">Analyse par des professionnels</h3>
+                            <p>Chaque pratique proposée est examinée par de véritables experts reconnus dans leur domaine .</p>
+                        </div>
+                    </div>
+                    <div class="content1 grid grid-cols-[50px,1fr] items-center">
+                        <img src="./icons/search.svg" alt="">
+                        <div class="grid grid-rows-[50px,1fr] items-center text-left">
+                            <h3 class="text-[16px] font-bold">Recherche intelligente</h3>
+                            <p>Trouvez des influenceurs ou des pratiques actuelles , en un clin d'oeil et sans douter des infos.
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div class="content1 grid grid-cols-[50px,1fr] items-center">
+                        <img src="./icons/book-open.svg" alt="">
+                        <div class="grid grid-rows-[50px,1fr] items-center text-left">
+                            <h3 class="text-[16px] font-bold">Programme d'affiliation</h3>
+                            <p>Grace au programme d'affiliation Desintox ,les influenceurs officiels seront reconnus et
+                                facilement identifés. </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="content1 grid grid-cols-[50px,1fr] items-center">
-                <img src="./icons/search.svg" alt="">
-                <div class="grid grid-rows-[50px,1fr] items-center text-left">
-                    <h3 class="text-[16px] font-bold">Recherche intelligente</h3>
-                    <p>Trouvez des influenceurs ou des pratiques actuelles , en un clin d'oeil et sans douter des infos.
-                    </p>
+        
+            <div class="flex flex-col items-center justify-center p-7">
+                <div class="w-full max-w-md">
+                    <p class="mb-4 text-left">Ne soyez plus spectateur</p>
+                    <h3 class="mb-6 text-left text-lg font-semibold">Rejoignez notre newsletter</h3>
+                </div>
+                <form action="https://arcom-40kd.onrender.com/newsletter" method="POST"
+                    class="w-[90vw] max-w-md flex flex-col gap-6 border border-black p-6 rounded-md">
+        
+        
+                    <div class="flex flex-col w-full">
+                        <label for="nom" class="text-sm font-medium text-left">Nom</label>
+                        <input type="text" id="nom" name="nom"
+                            class="w-full border-b border-black focus:outline-none focus:ring-0" placeholder="Votre nom"
+                            required>
+                    </div>
+        
+                    <div class="flex flex-col w-full">
+                        <label for="mail" class="text-sm font-medium text-left">Adresse mail</label>
+                        <input type="email" id="mail" name="email"
+                            class="w-full border-b border-black focus:outline-none focus:ring-0"
+                            placeholder="Votre adresse mail" required>
+                    </div>
+        
+                    <button type="submit" class="self-center px-6 py-2 bg-black text-white rounded-md hover:bg-blue-600">
+                        Valider
+                    </button>
+                </form>
+            </div>
+    
+        </div>
+        <!-- desktop -->
+        <div class="grid grid-cols-2 bg-black pb-7 gap-4 px-4 h-screen" x-show="isWideScreen">
+            <!-- Colonne 1 -->
+            <div class="bg-white grid grid-rows-3 gap-4 place-items-center w-[40vw] h-[70vh] mx-auto mt-7 p-7">
+                <div class="content1 grid grid-cols-[50px,1fr] items-center gap-2">
+                    <img src="./icons/activity.svg" alt="Icone activité">
+                    <div class="grid grid-rows-[auto,1fr] items-center text-left">
+                        <h3 class="text-[16px] font-bold">Analyse par des professionnels</h3>
+                        <p>Chaque pratique proposée est examinée par de véritables experts reconnus dans leur domaine.</p>
+                    </div>
+                </div>
+
+                <div class="content1 grid grid-cols-[50px,1fr] items-center gap-2">
+                    <img src="./icons/search.svg" alt="Icone recherche">
+                    <div class="grid grid-rows-[auto,1fr] items-center text-left">
+                        <h3 class="text-[16px] font-bold">Recherche intelligente</h3>
+                        <p>Trouvez des influenceurs ou des pratiques actuelles, en un clin d'œil et sans douter des infos.</p>
+                    </div>
+                </div>
+
+                <div class="content1 grid grid-cols-[50px,1fr] items-center gap-2">
+                    <img src="./icons/book-open.svg" alt="Icone programme">
+                    <div class="grid grid-rows-[auto,1fr] items-center text-left">
+                        <h3 class="text-[16px] font-bold">Programme d'affiliation</h3>
+                        <p>Grâce au programme d'affiliation Desintox, les influenceurs officiels seront reconnus et facilement identifiés.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="content1 grid grid-cols-[50px,1fr] items-center">
-                <img src="./icons/book-open.svg" alt="">
-                <div class="grid grid-rows-[50px,1fr] items-center text-left">
-                    <h3 class="text-[16px] font-bold">Programme d'affiliation</h3>
-                    <p>Grace au programme d'affiliation Desintox ,les influenceurs officiels seront reconnus et
-                        facilement identifés. </p>
+            <!-- Colonne 2 -->
+            <div class="flex flex-col h-screen px-6 pb-14">
+                <h3 class="text-xl font-bold mb-4 self-start">Je m'inscris</h3>
+                <div class="flex flex-col flex-grow justify-center items-center gap-6">
+                    <p class="text-white">Ne soyez plus spectateurs</p>
+                    <h3 class="text-xl font-bold text-white">Rejoignez notre NEWSLETTER</h3>
+                                    <form action="https://arcom-40kd.onrender.com/newsletter" method="POST"
+                        class="w-[90vw] max-w-md flex flex-col gap-6 border border-white p-6 rounded-md">
+                        <div class="flex flex-col w-full">
+                            <label for="nom" class="text-sm font-medium text-left">Nom</label>
+                            <input type="text" id="nom" name="nom"
+                                class="w-full border-b border-white focus:outline-none focus:ring-0 bg-black text-white placeholder-gray-400"
+                                placeholder="Votre nom" required>
+                        </div>
+                        <div class="flex flex-col w-full">
+                            <label for="mail" class="text-sm font-medium text-left">Adresse mail</label>
+                            <input type="email" id="mail" name="email"
+                                class="w-full border-b border-white focus:outline-none focus:ring-0 bg-black text-white placeholder-gray-400"
+                                placeholder="Votre adresse mail" required>
+                        </div>
+                        <button type="submit"
+                            class="self-center px-6 py-2 bg-white text-black rounded-md hover:bg-blue-600 hover:text-white">
+                            Valider
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="flex flex-col items-center justify-center p-7">
-        <div class="w-full max-w-md">
-            <p class="mb-4 text-left">Ne soyez plus spectateur</p>
-            <h3 class="mb-6 text-left text-lg font-semibold">Rejoignez notre newsletter</h3>
-        </div>
-        <form action="https://arcom-irzh.onrender.com/newsletter" method="POST"
-            class="w-[90vw] max-w-md flex flex-col gap-6 border border-black p-6 rounded-md">
+    
 
 
-            <div class="flex flex-col w-full">
-                <label for="nom" class="text-sm font-medium text-left">Nom</label>
-                <input type="text" id="nom" name="nom"
-                    class="w-full border-b border-black focus:outline-none focus:ring-0" placeholder="Votre nom"
-                    required>
-            </div>
-
-            <div class="flex flex-col w-full">
-                <label for="mail" class="text-sm font-medium text-left">Adresse mail</label>
-                <input type="email" id="mail" name="email"
-                    class="w-full border-b border-black focus:outline-none focus:ring-0"
-                    placeholder="Votre adresse mail" required>
-            </div>
-
-            <button type="submit" class="self-center px-6 py-2 bg-black text-white rounded-md hover:bg-blue-600">
-                Valider
-            </button>
-        </form>
-    </section>
-
-
-    <section class="flex flex-col items-center" x-data="{ currentIndex: 0 }">
-        <div class="w-[80%] h-[100%] overflow-x-scroll hide-scrollbar">
-            <div class="w-[555px] h-[287px] grid gap-4 grid-rows-1 grid-cols-2">
-                <div
-                    class="w-[273px] bg-white p-4 grid gap-1 grid-rows-[30px,30px,1fr] text-start rounded-lg border border-black">
-                    <h3 class="font-helvetica font-bold mt-2">Ce qu'ils disent</h3>
-                    <img src="./icons/guillemet.svg" alt="" class="h-12 w-12 pt-2"> <!-- Taille agrandie ici -->
-                    <p class="mt-4">C'est quand il y a des preuves comme des images, des vidéos. La meilleure façon de
-                        prouver un truc, c'est le visuel.</p>
-                    <div class="flex items-center space-x-4">
-                        <img src="./icons/personna1.svg" alt="" class="h-12 w-12">
-                        <ul class="list-none">
-                            <li>Ali</li>
-                            <li>20 ans</li>
-                            <li>Réseaux sociaux</li>
-                        </ul>
+    <!-- carrousel 2 -->
+    <section x-data="{ isWideScreen: window.innerWidth >= 768 }"
+        x-init="window.addEventListener('resize', () => isWideScreen = window.innerWidth >= 768)">
+        <!-- mobile -->
+        <div class="flex flex-col items-center" x-data="{ currentIndex: 0 }" x-show="!isWideScreen">
+            <div class="w-[80%] h-[100%] overflow-x-scroll hide-scrollbar">
+                <div class="w-[555px] h-[287px] grid gap-4 grid-rows-1 grid-cols-2">
+                    <div
+                        class="w-[273px] bg-white p-4 grid gap-1 grid-rows-[30px,30px,1fr] text-start rounded-lg border border-black">
+                        <h3 class="font-helvetica font-bold mt-2">Ce qu'ils disent</h3>
+                        <img src="./icons/guillemet.svg" alt="" class="h-12 w-12 pt-2"> <!-- Taille agrandie ici -->
+                        <p class="mt-4">C'est quand il y a des preuves comme des images, des vidéos. La meilleure façon
+                            de
+                            prouver un truc, c'est le visuel.</p>
+                        <div class="flex items-center space-x-4">
+                            <img src="./icons/personna1.svg" alt="" class="h-12 w-12">
+                            <ul class="list-none">
+                                <li>Ali</li>
+                                <li>20 ans</li>
+                                <li>Réseaux sociaux</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <div
-                    class="w-[273px] bg-white p-4 grid gap-1 grid-rows-[30px,30px,1fr] text-start rounded-lg border border-black">
-                    <h3 class="font-helvetica font-bold mt-2">Ce qu'ils disent</h3>
-                    <img src="./icons/guillemet.svg" alt="" class="h-12 w-12 pt-2"> <!-- Taille agrandie ici -->
-                    <p class="mt-4">C'est quand il y a des preuves comme des images, des vidéos. La meilleure façon de
-                        prouver un truc, c'est le visuel.</p>
-                    <div class="flex items-center space-x-4">
-                        <img src="./icons/personna1.svg" alt="" class="h-12 w-12">
-                        <ul class="list-none">
-                            <li>Ali</li>
-                            <li>20 ans</li>
-                            <li>Réseaux sociaux</li>
-                        </ul>
+                    <div
+                        class="w-[273px] bg-white p-4 grid gap-1 grid-rows-[30px,30px,1fr] text-start rounded-lg border border-black">
+                        <h3 class="font-helvetica font-bold mt-2">Ce qu'ils disent</h3>
+                        <img src="./icons/guillemet.svg" alt="" class="h-12 w-12 pt-2"> <!-- Taille agrandie ici -->
+                        <p class="mt-4">C'est quand il y a des preuves comme des images, des vidéos. La meilleure façon
+                            de
+                            prouver un truc, c'est le visuel.</p>
+                        <div class="flex items-center space-x-4">
+                            <img src="./icons/personna1.svg" alt="" class="h-12 w-12">
+                            <ul class="list-none">
+                                <li>Ali</li>
+                                <li>20 ans</li>
+                                <li>Réseaux sociaux</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
+        <!-- desktop -->
+        <div class="flex flex-col items-center" x-data="{ currentIndex: 0 }">
+            <div class="w-full max-w-screen-lg px-4 py-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="w-full bg-white p-4 grid gap-4 text-start rounded-lg border border-black">
+                        <h3 class="font-helvetica font-bold mt-2">Ce qu'ils disent</h3>
+                        <img src="./icons/guillemet.svg" alt="" class="h-12 w-12 pt-2">
+                        <p class="mt-4">C'est quand il y a des preuves comme des images, des vidéos. La meilleure
+                            façon de
+                            prouver un truc, c'est le visuel.</p>
+                        <div class="flex items-center space-x-4">
+                            <img src="./icons/personna1.svg" alt="" class="h-12 w-12">
+                            <ul class="list-none">
+                                <li>Ali</li>
+                                <li>20 ans</li>
+                                <li>Réseaux sociaux</li>
+                            </ul>
+                        </div>
+                    </div>
 
-
+                    <div class="w-full bg-white p-4 grid gap-4 text-start rounded-lg border border-black">
+                        <h3 class="font-helvetica font-bold mt-2">Ce qu'ils disent</h3>
+                        <img src="./icons/guillemet.svg" alt="" class="h-12 w-12 pt-2">
+                        <p class="mt-4">C'est quand il y a des preuves comme des images, des vidéos. La meilleure
+                            façon de
+                            prouver un truc, c'est le visuel.</p>
+                        <div class="flex items-center space-x-4">
+                            <img src="./icons/personna1.svg" alt="" class="h-12 w-12">
+                            <ul class="list-none">
+                                <li>Ali</li>
+                                <li>20 ans</li>
+                                <li>Réseaux sociaux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Questions fréquentes -->
