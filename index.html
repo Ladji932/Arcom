@@ -458,9 +458,9 @@
     </section>
 
     <!-- Questions fréquentes -->
-    <section class="p-4 bg-white">
+    <section class="p-4 bg-white" x-data="{ isWideScreen: window.innerWidth >= 768 }" x-init="window.addEventListener('resize', () => isWideScreen = window.innerWidth >= 768)">
         <!-- mobile -->
-        <div class="max-w-md mx-auto">
+        <div class="max-w-md mx-auto" x-show="!isWideScreen">
             <h2 class="text-xl font-bold text-center mb-4">Questions fréquentes</h2>
             <div class="grid gap-2">
                 <div x-data="{ open: false }" class="border rounded-lg">
@@ -500,15 +500,80 @@
         </div>
 
         <!-- desktop -->
+        <div class="grid grid-rows-[80px,80px,80px,80px] gap-[80px] justify-items-center items-center h-[700px]" x-show="isWideScreen">
+            <h2 class="text-[56px] mt-[50px] font-bold">Questions fréquentes</h2>
+            <div x-data="{ open: false }" class="border rounded-lg border-[#9F9F9F] w-[904px] h-[80px] grid items-center">
+                <button @click="open = !open" class="grid grid-cols-2 justify-between items-center w-full p-4 ">
+                    <span class="font-semibold text-start">Les influenceurs sont-ils tous non fiables ?</span>
+                    <span class="transform transition-transform text-end">
+                        ▼
+                    </span>
+                </button>
+                <div x-show="open" class="border rounded-lg border-[#9F9F9F] w-[904px] h-[80px] grid items-center mt-5 pl-5">
+                    <p>• <i class="font-bold">Non,</i> certains influenceurs collaborent avec des marques sérieuses et respectant les réglementations.</p>
+                    <p>• <i class="font-bold">Cependant,</i> il existe aussi des pratiques douteuses où les produits peu sûr ou inefficaces sont promus pour des gains financiers.</p>
+                </div>
+            </div>
+            <div x-data="{ open: false }" class="border rounded-lg border-[#9F9F9F] w-[904px] h-[80px] grid items-center">
+                <button @click="open = !open" class="grid grid-cols-2 justify-between items-center w-full p-4 ">
+                    <span class="font-semibold text-start">Que faire si j'ai acheté un produit douteux ?</span>
+                    <span class="transform transition-transform text-end">
+                        ▼
+                    </span>
+                </button>
+                <div x-show="open" class="border rounded-lg border-[#9F9F9F] w-[904px] h-[80px] grid items-center mt-5 pl-5">
+                    <p>• <i class="font-bold">Arrêtez de l'utiliser immédiatement.</i></p>
+                    <p>• <i class="font-bold">Consultez un professionnel</i> de santé si vous ressentez des effets secondaires.</p>
+                    <p>• <i class="font-bold">Signalez le produit</i>auprès des autorités compétentes comme la DGCCRF en France.</p>
+                </div>
+            </div>
+            <div x-data="{ open: false }" class="border rounded-lg border-[#9F9F9F] w-[904px] h-[80px] grid items-center">
+                <button @click="open = !open" class="grid grid-cols-2 justify-between items-center w-full p-4 ">
+                    <span class="font-semibold text-start">Comment sensibiliser mes proches ?</span>
+                    <span class="transform transition-transform text-end">
+                        ▼
+                    </span>
+                </button>
+                <div x-show="open" class="border rounded-lg border-[#9F9F9F] w-[904px] h-[80px] grid items-center mt-5 pl-5">
+                    <p>• <i class="font-bold">Partager</i> les messages de la campagne.</p>
+                    <p>• <i class="font-bold">Expliquez</i> l'importance de vérifier la fiabilité des produits.</p>
+                    <p>• <i class="font-bold">Encouragez</i> des discussions ouvertes sur les dangers des pratiques non éthiques</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section
-        class="bg-[#825EE8] w-[90vw] mx-auto grid grid-cols-[50%,1fr] items-center p-10 rounded-lg text-white mt-14">
-        <h2 class="text-lg font-bold">Suivez-nous sur les réseaux</h2>
-        <div class="flex gap-4">
-            <img src="./icons/instagram.svg" alt="" class="w-10 h-10">
-            <img src="./icons/tiktok.svg" alt="" class="w-10 h-10">
-            <img src="./icons/youtube.svg" alt="" class="w-10 h-10">
+    <!-- résaux sociaux -->
+    <!-- mobile -->
+    <section x-data="{ isWideScreen: window.innerWidth >= 768 }" x-init="window.addEventListener('resize', () => isWideScreen = window.innerWidth >= 768)">
+        <div
+            class="bg-[#825EE8] w-[90vw] mx-auto grid grid-cols-[50%,1fr] items-center p-10 rounded-lg text-white mt-14" x-show="!isWideScreen">
+            <h2 class="text-lg font-bold">Suivez-nous sur les réseaux</h2>
+            <div class="flex gap-4">
+                <img src="./icons/instagram.svg" alt="" class="w-10 h-10">
+                <img src="./icons/tiktok.svg" alt="" class="w-10 h-10">
+                <img src="./icons/youtube.svg" alt="" class="w-10 h-10">
+            </div>
+        </div>
+    
+        <!-- desktop -->
+        <div class="grid justify-items-center" x-show="isWideScreen">
+            <div class="bg-[#825EE8] grid grid-cols-[450px,242px] gap-[312px] h-[276px] w-[90%] rounded-2xl pl-[93px] items-center">
+                <h2 class="text-[56px] text-white font-semibold">Suivez-nous sur<br> les réseaux</h2>
+                <div class="grid grid-cols-3 gap-[56px]">
+                    <img src="./icons/instagram.svg" alt="istagram icon" class="w-[45px] h-[45px]">
+                    <img src="./icons/tiktok.svg" alt="ticktok icon" class="w-[45px] h-[45px]">
+                    <img src="./icons/youtube.svg" alt="youtube icon" class="w-[45px] h-[45px]">
+                </div>
+            </div>
+         </div>
+
+    </section>
+    <!-- footer -->
+    <section>
+        <div class="grid grid-rows-[60px,82px] mt-[40px] h-[150px] justify-items-center ">
+            <img src="./icons/arcom.svg" alt="image arcom" class="w-[60px] h-[60px]">
+            <p class="text-[#9F9F9F] text-[22px] font-normal">© 2024 CLEARSIGHT - Tous droits réservés</p>
         </div>
     </section>
 
