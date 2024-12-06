@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="manifest" href="/front/manifest.json">
+    <link rel="manifest" href="./manifest.json">
     <title>Désinfox</title>
     <script>
         window.addEventListener("load", () => {
             if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("/front/sw.js")
+                navigator.serviceWorker.register("./sw.js")
             }
         })
     </script>
@@ -347,7 +347,9 @@
 
     </section>
 
+    <!-- Questions fréquentes -->
     <section class="p-4 bg-white">
+        <!-- mobile -->
         <div class="max-w-md mx-auto">
             <h2 class="text-xl font-bold text-center mb-4">Questions fréquentes</h2>
             <div class="grid gap-2">
@@ -386,6 +388,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- desktop -->
     </section>
 
     <section
