@@ -36,7 +36,7 @@ app.post("/newsletter", async (req, res) => {
         `, attachments: [
             {
                 filename: 'nom_du_fichier.png', 
-                path: '../front/icons/http.png'
+                path: '../icons/http.png'
             }
         ]
         });
