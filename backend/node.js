@@ -35,8 +35,8 @@ app.post("/newsletter", async (req, res) => {
             <p>Merci de vous être inscrit</p>
         `, attachments: [
             {
-                filename: 'nom_du_fichier.png', 
-                path: '../icons/http.png'
+                filename: 'newsletter.png', 
+                path: '../icons/Newsletter.pdf'
             }
         ]
         });
